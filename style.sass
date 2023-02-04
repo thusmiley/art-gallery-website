@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&family=Outfit:wght@300&display=swap')
+
+$brown: #D5966C
+$almostblack: #151515
+$grey: #444444
+$white: #fff    
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body
+    font-family: 'Outfit', sans-serif     
+    position: relative   
+
+img
+    max-width: 100%
+    display: block
+h1,
+h2,
+h3, 
+h4
+   font-family: 'Big Shoulders Display', cursive 
+   color: $almostblack
+h1
+    font-size: 96px
+    line-height: 88px
+h2
+    font-size: 70px
+    line-height: 70px
+h3
+    font-size: 60px
+    line-height: 50px
+h4
+    font-size: 36px
+    line-height: 36px
+p
+    font-size: 22px
+    line-height: 32px
+    color: $grey
+
+a
+    text-decoration: none    
+    font-size: 20px
+    letter-spacing: 3.64px
+    color: $white
+    font-family: 'Big Shoulders Display', cursive    
+
+.container
+    width: 1110px
+    margin: auto
+@media only screen and (max-width: 1200px)
+    .container
+        width: 689px
+    p
+        font-size: 18px
+        line-height: 28px       
+@media only screen and (max-width: 700px)
+    .container
+        width: 343px
+@media only screen and (max-width: 480px)
+    .container
+        width: 100%
+        padding-left: calc(8px + 1.5625vw)
+        padding-right: calc(8px + 1.5625vw)
+// Header    
+header
+    background: linear-gradient(to right, $almostblack 50%, $white 50%)
+
+.hero
+    display: flex
+    height: 800px
+    position: relative
+    background-image: url("./assets/desktop/image-hero@2x.jpg")
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: top center
+.hero-left,
+.hero-right
+    position: absolute
+    top: 190px
+.hero-mobile
+    display: none
+.hero-left
+    left: 0
+    h1
+        background-color: $white
+        background-image: linear-gradient(to right, $white 63.5%, $almostblack 46.5%)
+        background-image: conic-gradient(to right, $white 63.5%, $almostblack 46.5%)
+        background-size: 100%
+        -webkit-background-clip: text
+        -moz-background-clip: text
+        -webkit-text-fill-color: transparent 
+        -moz-text-fill-color: transparent
+.hero-right
+    right: 0
+    max-width: 33ch
+.cta
+    display: flex
+    margin-top: 64px
+    a
+        background-color: $almostblack
+        padding: 24px 32px
+    img
+        background-color: $brown
+        padding: 24px 32px
+    &:hover
+        a
+            background-color: $brown
+        img
+            background-color: $almostblack
+@media only screen and (max-width: 1200px)
+    header
+        background: url("./assets/tablet/image-hero.jpg")
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: top left
+
+    .hero
+        background-image: none
+        height: 700px
+        flex-direction: column
+    .hero-left
+        top: 145px
+        left: 350px
+        h1
+            background-image: none
+            background-color: $almostblack
+            font-size: 70px
+            line-height: 65px
+    .hero-right
+        margin-top: 133px
+        right: 0.5px
+        .cta
+            margin-top: 48px
+
+@media only screen and (max-width: 700px)
+    header
+        background: none
+    .hero
+        height: auto
+    .hero-mobile
+        display: block
+        width: 343px
+        margin: 0 auto
+    .hero-left,
+    .hero-right
+        position: relative        
+    .hero-left
+        top: 32px
+        left: 0
+        h1
+            font-size: 60px
+            line-height: 55px
+    .hero-right
+        top: 32px
+        margin-top: 32px
+        right: 0
+        .cta
+            margin-top: 32px
+@media only screen and (max-width: 480px)
+    .hero-mobile
+        width: 100%
+// Gallery    
+.gallery
+    margin-top: 180px
+    display: grid
+    grid-template-areas: "card1 card1 img1 img1 img1" "img2 img2 img2 img3 img3" "img2 img2 img2 card2 card2"     
+    grid-template-columns:  repeat(5, 1fr)
+    grid-template-rows:  auto auto auto
+    gap: 30px
+.card1
+    grid-area: card1    
+    margin-right: 95px
+    margin-top: 65px
+    p
+        margin-top: 32px
+.img1    
+    grid-area: img1 
+.img2
+    grid-area: img2 
+.img3
+    grid-area: img3 
+.card2
+    grid-area: card2   
+    padding: 72px 47px
+    background-color: $almostblack       
+    h2,
+    p
+        color: $white   
+    p
+        margin-top: 32px        
+@media only screen and (max-width: 1200px)
+    .gallery
+        margin-top: 120px
+        gap: 15px
+        h2
+            font-size: 50px
+            line-height: 45px
+        p
+            margin-top: 24px 
+        img
+            width: 100%
+    .card1
+        margin-right: 68px
+        margin-top: 36px
+        h2
+            max-width: 8ch
+    .card2
+        padding: 99px 29px
+        h2
+            max-width: 10ch
+
+@media only screen and (max-width: 700px)
+    .gallery
+        margin-top: 120px
+        gap: 25px
+        grid-template-areas: "img1" "card1" "img2" "img3" "card2"    
+        grid-template-columns:  repeat(1, 1fr)
+        p
+            margin-top: 21px 
+    .card1
+        margin-right: 0
+        margin-top: 0
+        h2
+            max-width: 100%
+    .card2
+        padding: 48px 24px
+        h2
+            max-width: 100%
+// Footer        
+.footer-home
+    background-color: $almostblack
+    margin-top: 180px
+.footer-wrapper
+    display: flex
+    padding: 80px 0
+    justify-content: space-between
+    align-items: flex-start
+    p
+        max-width: 36ch
+        font-size: 18px
+        line-height: 28px     
+        color: $white   
+.socials
+    display: flex
+    a:not(:last-child)
+        margin-right: 20px
+    a:hover 
+        filter: invert(0.35) sepia(1) saturate(1.1) hue-rotate(0deg) brightness(0.65)       
+@media only screen and (max-width: 1200px)
+    footer
+        margin-top: 120px
+    .footer-wrapper
+        padding: 56px 0
+        justify-content: space-between
+        p
+            max-width: 26ch
+            font-size: 16px
+            line-height: 26px     
+@media only screen and (max-width: 700px)
+    .footer-wrapper
+        flex-direction: column
+        padding: 48px 0
+        justify-content: space-between
+        p
+            max-width: 100%
+            margin: 38px 0
+    .logo-light
+        width: 110px
+@media only screen and (max-width: 480px)
+    .footer-wrapper
+        padding: 48px calc(8px + 1.5625vw)
+
+// =============== LOCATION PAGE ===============    
+.location-cta
+    position: absolute
+    margin-top: 0
+    width: 290px
+@media only screen and (max-width: 480px)     
+    .location-cta
+        left: calc(0px - 8px + 1.5625vw)   
+// Map
+.map
+    width: 100%
+    img
+        width: 100%
+        top: 0
+        left: 0
+        right: 0
+        margin: auto
+        z-index: -1
+
+// Our location        
+.our-location
+    background-color: $almostblack
+    padding-top: 104px 
+    padding-bottom: 128px 
+    h2,
+    p
+        color: $white
+    h2
+        max-width: 4ch
+    p                
+        max-width: 36ch
+    h4
+        color: $brown
+    .container
+        display: flex
+        justify-content: space-between
+    .address
+        margin: 24px 0 32px 0
+
+@media only screen and (max-width: 1200px)     
+    .our-location
+        padding-top: 88px 
+        padding-bottom: 80px 
+        h2
+            font-size: 55px
+            line-height: 50px
+        h4
+            font-size: 32px
+            line-height: 32px
+        p
+            font-size: 18px
+            line-height: 28px  
+            max-width: 28ch                     
+@media only screen and (max-width: 700px)     
+    .our-location .container
+        flex-direction: column
+    .our-location
+        padding-top: 48px 
+        padding-bottom: 56px 
+        h2
+            font-size: 50px
+            line-height: 45px
+            max-width: 100%
+            margin-bottom: 48px
+        p
+            max-width: 100%
+        .address
+            margin: 20px 0 
+// Footer
+.brown-footer
+    margin-top: 0   
+    background-color: $brown
+    p
+        color: $almostblack
+    .socials img
+        -webkit-filter: invert(100%) 
+        filter: invert(100%)
+        &:hover
+            -webkit-filter: invert(100%) 
+            filter: invert(100%)
+
