@@ -46,7 +46,7 @@ a
     letter-spacing: 3.64px
     color: $white
     font-family: 'Big Shoulders Display', cursive    
-
+    
 .container
     width: 1110px
     margin: auto
@@ -99,17 +99,21 @@ header
 .cta
     display: flex
     margin-top: 64px
+    cursor: pointer
+    transition: 0.3s
     a
         background-color: $almostblack
         padding: 24px 32px
+        transition: 0.3s
     img
         background-color: $brown
         padding: 24px 32px
-    &:hover
-        a
-            background-color: $brown
-        img
-            background-color: $almostblack
+        transition: 0.3s
+.cta:hover a
+    background-color: $brown
+.cta:hover img
+    background-color: $almostblack
+
 @media only screen and (max-width: 1200px)
     header
         background: url("./assets/tablet/image-hero.jpg")
@@ -245,10 +249,12 @@ header
         color: $white   
 .socials
     display: flex
+    a
+        transition: 0.3s
     a:not(:last-child)
         margin-right: 20px
-    a:hover 
-        filter: invert(0.35) sepia(1) saturate(1.1) hue-rotate(0deg) brightness(0.65)       
+.socials-home:hover path
+    fill: $brown     
 @media only screen and (max-width: 1200px)
     footer
         margin-top: 120px
@@ -347,10 +353,8 @@ header
     background-color: $brown
     p
         color: $almostblack
-    .socials img
-        -webkit-filter: invert(100%) 
-        filter: invert(100%)
-        &:hover
-            -webkit-filter: invert(100%) 
-            filter: invert(100%)
+.socials-location
+    transition: 0.3s
+.socials-location:hover path
+    fill: white
 

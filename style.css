@@ -129,18 +129,24 @@ header {
 .cta {
   display: flex;
   margin-top: 64px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 .cta a {
   background-color: #151515;
   padding: 24px 32px;
+  transition: 0.3s;
 }
 .cta img {
   background-color: #D5966C;
   padding: 24px 32px;
+  transition: 0.3s;
 }
+
 .cta:hover a {
   background-color: #D5966C;
 }
+
 .cta:hover img {
   background-color: #151515;
 }
@@ -188,7 +194,7 @@ header {
     margin: 0 auto;
   }
   .hero-left,
-.hero-right {
+  .hero-right {
     position: relative;
   }
   .hero-left {
@@ -330,11 +336,15 @@ header {
 .socials {
   display: flex;
 }
+.socials a {
+  transition: 0.3s;
+}
 .socials a:not(:last-child) {
   margin-right: 20px;
 }
-.socials a:hover {
-  filter: invert(0.35) sepia(1) saturate(1.1) hue-rotate(0deg) brightness(0.65);
+
+.socials-home:hover path {
+  fill: #D5966C;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -466,9 +476,11 @@ header {
 .brown-footer p {
   color: #151515;
 }
-.brown-footer .socials img {
-  filter: invert(100%);
+
+.socials-location {
+  transition: 0.3s;
 }
-.brown-footer .socials img:hover {
-  filter: invert(100%);
+
+.socials-location:hover path {
+  fill: white;
 }/*# sourceMappingURL=style.css.map */
