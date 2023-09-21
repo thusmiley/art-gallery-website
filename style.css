@@ -132,7 +132,7 @@ header {
   cursor: pointer;
   transition: 0.3s;
 }
-.cta a {
+.cta .cta-black {
   background-color: #151515;
   padding: 24px 32px;
   transition: 0.3s;
